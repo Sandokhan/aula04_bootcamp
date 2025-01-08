@@ -18,9 +18,20 @@
 #     print(f"{key}: {value}")
 
 # Exercise 4
-word : str = "the fox jumps over the lazy dog"
+# word : str = "the fox jumps over the lazy dog"
 
-def count_letters(word: str) -> dict:
-    return {letter : word.count(letter) for letter in word}
+# def count_letters(word: str) -> dict:
+#     return {letter : word.count(letter) for letter in word}
 
-print(count_letters(word))
+# print(count_letters(word))
+
+# Exercise 5
+fruit_list : list = ["maça", "banana", "cereja"]
+fruit_dict : dict = {"maça" : .45, "banana" : .3, "cereja" : .65}
+total : float = 0
+
+for k, v in fruit_dict.items():
+    if k in fruit_list:
+        total = total + v
+
+print(total)
