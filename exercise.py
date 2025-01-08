@@ -13,6 +13,14 @@
 # print(language_list)
 
 # Exercise 3
-bookshelf : dict = {'Title' : 'SPQR', 'Author' : 'Mary Beard', 'Year' : 2015}
-for key, value in bookshelf.items():
-    print(f"{key}: {value}")
+# bookshelf : dict = {'Title' : 'SPQR', 'Author' : 'Mary Beard', 'Year' : 2015}
+# for key, value in bookshelf.items():
+#     print(f"{key}: {value}")
+
+# Exercise 4
+word : str = "the fox jumps over the lazy dog"
+
+def count_letters(word: str) -> dict:
+    return {letter : word.count(letter) for letter in word}
+
+print(count_letters(word))
