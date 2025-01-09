@@ -55,3 +55,7 @@
 # people.sort(key=lambda people: people["nome"])
 
 # print(people)
+
+# Exercise 9
+numbers : list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+print(f"Average: {sum(numbers) / len(numbers)}")
