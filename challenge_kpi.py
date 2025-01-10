@@ -40,6 +40,7 @@ def calculate_kpi(nome: str, salario: float, bonus: float) -> dict:
             bonus_rate : float = float(bonus)
             if bonus_rate < 0:
                 print("Por favor, digite um valor positivo para o bônus.")
+                break
             else:
                 # Calculate the bonus received
                 bonus_recebido : float = 1000 + salary * bonus_rate
@@ -49,10 +50,13 @@ def calculate_kpi(nome: str, salario: float, bonus: float) -> dict:
             print("Entrada inválida para o bônus. Por favor, digite um número.")
             exit()
 
-    return kpi_dict
+    if nome_valido and salario_valido and bonus_valido:
+        return kpi_dict
+    else:
+        return "Três são necessários para o calculo do KPI."
 
 # Teste
-print(calculate_kpi("João", 10000, 1.5))
-print(calculate_kpi("João", -10000, 1.5))
-print(calculate_kpi("Jo4o", 10000, 1.5))
+# print(calculate_kpi("João", 10000, 1.5))
+# print(calculate_kpi("João", -10000, 1.5))
+# print(calculate_kpi("Jo4o", 10000, 1.5))
 print(calculate_kpi("João", 10000, -1.5))
