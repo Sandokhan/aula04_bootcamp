@@ -1,43 +1,58 @@
-nome_valido : bool = False
-salario_valido : bool = False
-bonus_valido : bool = False
+def calculate_kpi(nome: str, salario: float, bonus: float) -> dict:
+    kpi_dict : dict = {}
 
-while not nome_valido:
-    try:
-        nome : str = input("Digite seu nome: ")
+    nome_valido : bool = False
+    salario_valido : bool = False
+    bonus_valido : bool = False
 
-        # Verifica se o nome está vazio
-        if len(nome) == 0:
-            raise ValueError("O nome não pode estar vazio.")
-        # Verifica se há números no nome
-        elif any(char.isdigit() for char in nome):
-            raise ValueError("O nome não deve conter números.")
-        else:
-            print("Nome válido:", nome)
-            nome_valido : bool = True
-    except ValueError as e:
-        print(e)
+    while not nome_valido:
+        try:
+            name : str = nome
 
-# Solicita ao usuário que digite o valor do seu salário e converte para float
+            # Verifica se o nome está vazio
+            if len(name) == 0:
+                raise ValueError("O nome não pode estar vazio.")
+            # Verifica se há números no nome
+            elif any(char.isdigit() for char in name):
+                raise ValueError("O nome não deve conter números.")
+            else:
+                kpi_dict["nome"] = name
+                nome_valido : bool = True
+        except ValueError as e:
+            print(e)
+            exit()
 
-try:
-    salario: float = float(input("Digite o valor do seu salário: "))
-    if salario < 0:
-        print("Por favor, digite um valor positivo para o salário.")
-except ValueError:
-    print("Entrada inválida para o salário. Por favor, digite um número.")
-    exit()
+    while not salario_valido:
+        try:
+            salary: float = float(salario)
+            if salary < 0:
+                print("Por favor, digite um valor positivo para o salário.")
+                break
+            else:
+                kpi_dict["salario"] = salary
+                salario_valido : bool = True
+        except ValueError:
+            print("Entrada inválida para o salário. Por favor, digite um número.")
+            exit()
 
-# Solicita ao usuário que digite o valor do bônus recebido e converte para float
-try:
-    bonus : float = float(input("Digite o valor do bônus recebido: "))
-    if bonus < 0:
-        print("Por favor, digite um valor positivo para o bônus.")
-except ValueError:
-    print("Entrada inválida para o bônus. Por favor, digite um número.")
-    exit()
+    while not bonus_valido:
+        try:
+            bonus_rate : float = float(bonus)
+            if bonus_rate < 0:
+                print("Por favor, digite um valor positivo para o bônus.")
+            else:
+                # Calculate the bonus received
+                bonus_recebido : float = 1000 + salary * bonus_rate
+                kpi_dict["bonus"] = bonus_recebido
+                bonus_valido : bool = True
+        except ValueError:
+            print("Entrada inválida para o bônus. Por favor, digite um número.")
+            exit()
 
-bonus_recebido : float = 1000 + salario * bonus  # Exemplo simples de KPI
+    return kpi_dict
 
-# Imprime as informações para o usuário
-print(f"{nome}, seu salário é R${salario:.2f} e seu bônus final é R${bonus_recebido:.2f}.")
+# Teste
+print(calculate_kpi("João", 10000, 1.5))
+print(calculate_kpi("João", -10000, 1.5))
+print(calculate_kpi("Jo4o", 10000, 1.5))
+print(calculate_kpi("João", 10000, -1.5))
