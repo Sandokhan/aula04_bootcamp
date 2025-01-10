@@ -85,10 +85,17 @@
 # print(dicionario_fundido)
 
 # Exercise 13
-estoque : dict = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
-for key in estoque.keys():
-    if estoque[key] == 0:
-        pass
-    else:
-        print(f"Produto {key} com estoque.")
+# estoque : dict = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+# for key in estoque.keys():
+#     if estoque[key] == 0:
+#         pass
+#     else:
+#         print(f"Produto {key} com estoque.")
 
+# Exercise 14
+dictonary : dict = {"a": 1, "b": 2, "c": 3, "d": 4}
+keys_dict : list = list(dictonary.keys())
+values_dict : list = list(dictonary.values())
+
+print(f"Keys: {keys_dict}")
+print(f"Values: {values_dict}")
