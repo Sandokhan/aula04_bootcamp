@@ -77,9 +77,18 @@
 # print(produtos)
 
 # Exercise 12
-dicionario1 = {"a": 1, "b": 2}
-dicionario2 = {"c": 3, "d": 4}
+# dicionario1 = {"a": 1, "b": 2}
+# dicionario2 = {"c": 3, "d": 4}
 
-dicionario_fundido = {**dicionario1, **dicionario2}
+# dicionario_fundido = {**dicionario1, **dicionario2}
 
-print(dicionario_fundido)
+# print(dicionario_fundido)
+
+# Exercise 13
+estoque : dict = {"Teclado": 10, "Mouse": 0, "Monitor": 3, "CPU": 0}
+for key in estoque.keys():
+    if estoque[key] == 0:
+        pass
+    else:
+        print(f"Produto {key} com estoque.")
+
