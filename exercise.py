@@ -93,9 +93,14 @@
 #         print(f"Produto {key} com estoque.")
 
 # Exercise 14
-dictonary : dict = {"a": 1, "b": 2, "c": 3, "d": 4}
-keys_dict : list = list(dictonary.keys())
-values_dict : list = list(dictonary.values())
+# dictonary : dict = {"a": 1, "b": 2, "c": 3, "d": 4}
+# keys_dict : list = list(dictonary.keys())
+# values_dict : list = list(dictonary.values())
 
-print(f"Keys: {keys_dict}")
-print(f"Values: {values_dict}")
+# print(f"Keys: {keys_dict}")
+# print(f"Values: {values_dict}")
+
+# Exercise 15
+text : str = "the fox jumps over the lazy dog"
+char_frequency : dict = {char : text.count(char) for char in text}
+print(char_frequency)
